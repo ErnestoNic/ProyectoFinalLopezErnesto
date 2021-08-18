@@ -1,0 +1,65 @@
+<form [formGroup]= "this.formCrearUsuario">
+    <div class="row">
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="nombre">
+        </mat-form-field>
+        <div *ngIf="this.formCrearUsuario.get('nombre')?.errors && this.formCrearUsuario.get('nombre')?.dirty">
+            <p *ngIf="this.formCrearUsuario.get('nombre')?.hasError('required')">El campo es obligatorio</p>
+            <p *ngIf="this.formCrearUsuario.get('nombre')?.hasError('pattern')">El campo no acepta caracteres especiales</p>
+        </div>
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Apellido</mat-label>
+            <input matInput formControlName="apellido">
+        </mat-form-field>
+        <div *ngIf="this.formCrearUsuario.get('apellido')?.errors && this.formCrearUsuario.get('apellido')?.dirty">
+            <p *ngIf="this.formCrearUsuario.get('apellido')?.hasError('required')">El campo es obligatorio</p>
+            <p *ngIf="this.formCrearUsuario.get('apellido')?.hasError('pattern')">El campo no acepta caracteres especiales</p>
+        </div>
+        
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Tipo documento</mat-label>
+            <input matInput formControlName="tipo_doc">
+        </mat-form-field>
+        <div *ngIf="this.formCrearUsuario.get('tipo_doc')?.errors && this.formCrearUsuario.get('tipo_doc')?.dirty">
+            <p *ngIf="this.formCrearUsuario.get('tipo_doc')?.hasError('required')">El campo es obligatorio</p>
+        </div>
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Numero de documento</mat-label>
+            <input matInput formControlName="numero_doc">
+        </mat-form-field>
+        <div *ngIf="this.formCrearUsuario.get('numero_doc')?.errors && this.formCrearUsuario.get('numero_doc')?.dirty">
+            <p *ngIf="this.formCrearUsuario.get('numero_doc')?.hasError('required')">El campo es obligatorio</p>
+            <p *ngIf="this.formCrearUsuario.get('numero_doc')?.hasError('minlength')">Debe tener al menos 6 caracteres</p>
+            <p *ngIf="this.formCrearUsuario.get('numero_doc')?.hasError('maxlength')">No debe tener mas de 10 caracteres</p>
+        </div>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>email</mat-label>
+            <input matInput formControlName="email">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Telefono</mat-label>
+            <input matInput formControlName="telefono">
+        </mat-form-field>
+        <div *ngIf="this.formCrearUsuario.get('telefono')?.errors && this.formCrearUsuario.get('telefono')?.dirty">
+            <p *ngIf="this.formCrearUsuario.get('telefono')?.hasError('pattern')">El campo no es un telefono</p>
+        </div>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Fecha de Nacimiento</mat-label>
+            <input matInput formControlName="fecha_nacimiento">
+        </mat-form-field>
+        <div *ngIf="this.formCrearUsuario.get('fecha_nacimiento')?.errors && this.formCrearUsuario.get('fecha_nacimiento')?.dirty">
+            <p *ngIf="this.formCrearUsuario.get('fecha_nacimiento')?.hasError('required')">El campo es obligatorio</p>
+            <p *ngIf="this.formCrearUsuario.get('fecha_nacimiento')?.hasError('pattern')">Formato de fecha dd/mm/yyyy</p>
+        </div>
+       
+    </div>
+    <div class="row">
+        <button mat-raised-button color="primary" (click)="submit()">Enviar</button>
+    </div>

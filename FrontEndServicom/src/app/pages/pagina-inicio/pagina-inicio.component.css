@@ -1,0 +1,18 @@
+.container {
+    text-align: center;
+    margin:auto; 
+    justify-content: space-between; 
+    align-items: center;
+  }
+
+  .example-card{
+    margin: 5% ;
+    justify-content: space-between;
+    
+
+  }
+  
+  .example-header-image {
+    justify-content: center;
+    background-size: cover;
+  }

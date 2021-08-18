@@ -1,0 +1,18 @@
+<div class="row">
+    <mat-toolbar color="primary">
+        <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+<mat-menu #menu="matMenu">
+  <button *ngIf="!this.authService.isAuthenticate()"mat-menu-item (click)="irLogin()">Login</button>
+  <button *ngIf="!this.authService.isAuthenticate()"mat-menu-item (click)="irCrearUsuario()">Registrate!</button>
+  <button *ngIf="this.authService.isAuthenticate()" mat-menu-item (click)="irUpdateUsuario()">Actualiza tus datos</button>
+
+</mat-menu>
+        <span>ServiCom</span>
+        <span class="example-spacer"></span>
+        
+        <button (click)="logout()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <mat-icon >logout</mat-icon>
+        </button>
+        </mat-toolbar>
+</div>
+    

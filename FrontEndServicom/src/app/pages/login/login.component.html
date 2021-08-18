@@ -1,0 +1,39 @@
+<form [formGroup]="this.formLogin">
+
+    <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Usuario</mat-card-title>
+          <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+        </mat-card-header>
+        <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content> -->
+          <div class="row">
+            <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email">
+                </mat-form-field>
+          </div>
+
+          <div class="row">
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password">
+            </mat-form-field>
+          </div>
+
+          <div class="row">
+            <button mat-raised-button color="primary" (click)="ejecutarLogin()">Login</button>
+           
+        </div>
+
+
+        <!-- </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions> -->
+      </mat-card>
+
+
+</form>
